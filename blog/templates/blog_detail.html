@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Blog - {{blog.sarlovha}}
+{% endblock title %}
+
+
+{% block content %}
+<h1>{{blog.sarlovha}}</h1>
+<small>Avtor:{{blog.avtor.username}} Sanasi:{{blog.vaqt}}
+    <a href="{% url 'index' %}"> Qaytish</a>
+    <a href="{% url 'blog_taxrirlash' blog.id %}">Taxrirlash</a>
+    <a href="{% url 'blog_ochirish' blog.id %}">O'chirish</a>
+   </small>
+   <img  class="w-100" src="/media/{{blog.rasm}}" alt="">
+<p>{{blog.tanasi}}</p>
+{% endblock content %}
